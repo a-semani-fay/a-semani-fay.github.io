@@ -1,0 +1,93 @@
+/* Appearance for index.html.
+   To change the colours, edit the values in the two blocks just below:
+   the first is for light mode, the second for dark mode. */
+
+:root {
+  --page:    #f4f6f8;
+  --card:    #ffffff;
+  --text:    #1c2430;
+  --muted:   #5b6777;
+  --border:  #dde2e8;
+  --accent:  #0b5cad;
+  --note-bg: #fff6e0;
+  --note-fg: #6b4a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:    #12161c;
+    --card:    #1b212a;
+    --text:    #e6eaf0;
+    --muted:   #9aa6b5;
+    --border:  #2c3440;
+    --accent:  #6cb2ff;
+    --note-bg: #33290f;
+    --note-fg: #f2d48a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1rem 3rem;
+  background: var(--page);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+header, main, footer {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+header { margin-bottom: 2rem; }
+header h1 { margin: 0 0 0.25rem; font-size: 2rem; line-height: 1.2; }
+header p  { margin: 0; color: var(--muted); }
+
+a { color: var(--accent); }
+
+/* One utility */
+.utility {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.utility h2 { margin: 0 0 0.35rem; font-size: 1.2rem; line-height: 1.3; }
+.utility h2 a { text-decoration: none; }
+.utility h2 a:hover { text-decoration: underline; }
+.utility p { margin: 0; overflow-wrap: anywhere; }
+
+/* The requirements line */
+.utility .requires {
+  margin-top: 0.75rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  background: var(--note-bg);
+  color: var(--note-fg);
+  font-size: 0.93rem;
+}
+
+.utility .requires::before {
+  content: "Requires: ";
+  font-weight: 700;
+}
+
+/* Optional group heading */
+.group {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
