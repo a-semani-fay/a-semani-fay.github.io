@@ -1,1 +1,1 @@
-# a-semani-fay.github.io
+FaySchool.github.io
